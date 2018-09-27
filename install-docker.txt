@@ -1,0 +1,35 @@
+http://elrepo.org/tiki/tiki-index.php
+
+# rpm --import RPM-GPG-KEY-elrepo.org
+# rpm -Uvh elrepo-release-6-8.el6.elrepo.noarch.rpm
+# yum -y --enablerepo=elrepo-kernel install kernel-ml
+# sed -i 's,default=1,default=0,' /boot/grub/grub.conf
+# yum update -y
+# tar -zxvf docker-18.06.1-ce.tgz
+# rm -rf docker-18.06.1-ce.tgz
+# cp docker/* /usr/bin/
+# yum -y install http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+# yum install docker-io
+# service docker restart
+
+
+
+===============
+
+docker-compose
+curl -L "docker-compose-Linux-x86_64$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose
+
+=========================================
+ (update kernel)
+http_proxy=http://setha:setha666@10.14.152.87:6666 rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
+http_proxy=http://setha:setha666@10.14.152.87:6666 rpm -Uvh https://www.elrepo.org/elrepo-release-6-8.el6.elrepo.noarch.rpm
+http_proxy=http://setha:setha666@10.14.152.87:6666 yum --enablerepo=elrepo-kernel install kernel-ml-*
+
+kemudian 
+
+vi /etc/grub.conf
+
+edit default=0  
+
+reboot
